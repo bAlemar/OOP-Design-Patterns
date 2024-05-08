@@ -3,6 +3,7 @@ import re
 import csv
 import uuid
 import pandas as pd
+from Continuacao_Funcionalidades import *
 
 class Cadastro_Musica():
 
@@ -80,22 +81,8 @@ class Cadastro_Musica():
 def main():
     cadastro = Cadastro_Musica()
     cadastro.run()
-    while True:
-        print("""
-        Musica Registrada com SUCESSO!!!
-        ==============//=================//====================
-        Deseja registrar outra Musica?
-              
-        Digite 1 para registrar outra musica 
-        Digite 2 para voltar para Layout
-        """)
-        resposta_input = str(input('Digite 1 ou 2: '))
-        if resposta_input == '1':
-            cadastro = Cadastro_Musica()
-            cadastro.run()
-        else:
-            # Insere layout
-            return '2'
+    script_continuacao = Next_Step()
+    script_continuacao.funcao_para_continuar(Cadastro_Musica())
         
 
 if __name__ == '__main__':

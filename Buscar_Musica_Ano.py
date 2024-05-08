@@ -1,4 +1,6 @@
 import pandas as pd
+from Continuacao_Funcionalidades import *
+
 
 class Buscar_Musica_Ano():
     def __init__(self) -> None:
@@ -23,26 +25,15 @@ class Buscar_Musica_Ano():
                 return match_ano
             else:
                 print("A musica que você digitou não foi encontrada")
+
+    def run(self):
+        self.Encontrar_data()
                 
 def main():
     script_ano = Buscar_Musica_Ano()
     script_ano.Encontrar_data()
-    while True:
-        print("""
-        Musica Registrada com SUCESSO!!!
-        ==============//=================//====================
-        Deseja registrar outra Musica?
-                
-        Digite 1 para registrar outra musica 
-        Digite 2 para voltar para Layout
-        """)
-        resposta_input = str(input('Digite 1 ou 2: '))
-        if resposta_input == '1':
-            script_ano = Buscar_Musica_Ano()
-            script_ano.Encontrar_data()
-        else:
-            # Insere layout
-            return '2'
+    script_continuacao = Next_Step()
+    script_continuacao.funcao_para_continuar(Buscar_Musica_Ano())
 
 
 if __name__ == '__main__':

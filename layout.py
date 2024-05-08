@@ -5,7 +5,7 @@ from Playlist_Aleatoria import *
 
 
 
-def main() -> str:
+def layout_main() -> str:
     print("""
     # 1 Cadastro Musica
     # 2 Buscar Musica pelo Titulo
@@ -13,7 +13,6 @@ def main() -> str:
     # 4 Playlist Aleatoria
     # 5 Sair
     """)
-    
     resposta = str(input('Digite a funcionalidade que deseja utilizar:'))
     
     if resposta == '1':
@@ -28,8 +27,10 @@ def main() -> str:
     if resposta == '4':
         script_playlist_aleatoria = Playlist_aleatoria()
         script_playlist_aleatoria.run()
-            
+    if resposta == '5':
+        KeyError('Você saiu do Script')
+                    
 
 
 if __name__ == '__main__':
-    main()
+    layout_main()

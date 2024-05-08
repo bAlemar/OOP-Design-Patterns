@@ -1,5 +1,6 @@
 import pandas as pd
 import random
+from Continuacao_Funcionalidades import *
 
 class Playlist_aleatoria:
     def __init__(self) -> None:
@@ -20,7 +21,9 @@ class Playlist_aleatoria:
 def main():
     script_playlist_aleatoria = Playlist_aleatoria()
     script_playlist_aleatoria.run()
-    
+    script_continuacao = Next_Step()
+    script_continuacao.funcao_para_continuar(Playlist_aleatoria())
+
     return
 
 if __name__ == '__main__':
