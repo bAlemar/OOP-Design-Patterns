@@ -1,4 +1,6 @@
 import pandas as pd
+from Continuacao_Funcionalidades import *
+
 
 class Buscar_Musica():
     def __init__(self) -> None:
@@ -28,32 +30,14 @@ class Buscar_Musica():
 
     def run(self):
         musica = self.Encontrar_Musica()
-
-
-        
-        
-        
+        return musica
 
 
 def main():
     script_buscar = Buscar_Musica()
     script_buscar.run()
-    while True:
-        print("""
-        Musica Encontrada com SUCESSO!!!
-        ==============//=================//====================
-        Deseja registrar encontrar Musica?
-                
-        Digite 1 para registrar encontrar musica 
-        Digite 2 para voltar para Layout
-        """)
-        resposta_input = str(input('Digite 1 ou 2: '))
-        if resposta_input == '1':
-            script_buscar = Buscar_Musica()
-            script_buscar.run()
-        else:
-            # Insere layout
-            return '2'
+    script_continuacao = Next_Step()
+    script_continuacao.funcao_para_continuar(Buscar_Musica())
 if __name__ == '__main__':
     main()
 
